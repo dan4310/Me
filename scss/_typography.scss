@@ -1,5 +1,14 @@
+@import 'colors';
+
 body {
     margin: 0;
     font-family: 'Roboto', sans-serif;
+    width: 100vw;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 800;
+    text-shadow: 2px 2px $shadow;
 }
 
