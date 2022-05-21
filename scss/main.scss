@@ -1,0 +1,153 @@
+@import 'variables';
+@import 'mixins';
+@import "fonts";
+@import 'typography';
+@import 'colors';
+
+.nav {
+    display: flex;
+    flex-direction: row;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    align-items: center;
+    .nav-left {
+        margin-right: auto;
+    }
+    .nav-right {
+        align-items: center;
+        display: flex;
+        gap: 1rem;
+    }
+}
+
+.logo {
+    font-weight: 800;
+    font-size: 18px;
+    @include breakpoint(sm, min) {
+        font-size: 24px;
+    }
+    color: $primary;
+}
+
+.nav-link {
+    font-size: 12px;
+    @include breakpoint(sm, min) {
+        font-size: 18px;
+    }
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+.btn {
+    display: flex;
+    align-items: top;
+    padding: 5px;
+    font-size: 12;
+    border: none;
+    border-radius: 7px;
+    background-color: $primary;
+    color: $text-alt;
+    font-weight: 700;
+    &:hover {
+        cursor: pointer;
+        background-color: $primary-light;
+        box-shadow: 3px 3px $shadow;
+        outline: 1px solid $primary-dark;
+    }
+    @include breakpoint(sm, min) {
+        font-size: 16px;
+    }
+}
+
+.hero-section {
+    min-height: 90vh;
+    position: relative;
+    .title {
+        .title-text {
+            margin-top: 0;
+            margin-bottom: 0;
+            margin-right: auto;
+            font-size: 36px;
+            @include breakpoint(sm, min) {
+                font-size: 48px;
+            }
+            @include breakpoint(lg, min) {
+                font-size: 62px;
+            }
+        }
+        @include breakpoint(sm, min) {
+            padding-top: 1rem;
+        }
+        @include breakpoint(md, min) {
+            padding-top: 3rem;
+        }
+    }
+    .hero-background {
+        .svg-orator {
+            position: absolute;
+            right: 0;
+            bottom: 2rem;
+            height: 66vh;
+        }
+    }
+}
+
+
+.featured-section {
+    background-color: $primary-dark;
+    .project-grid {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        display: grid;
+        grid-template-rows: 1fr 1fr 1fr;
+        background-color: $primary;
+        .project {
+            margin: 1rem 0;
+            background-color: $primary-light;
+            min-height: 260px;
+            @include breakpoint(sm, min) {
+                margin-left: 1rem;
+                margin-right: 1rem;
+            }
+            @include breakpoint(md, min) {
+                margin-left: 2rem;
+                margin-right: 2rem;
+            }
+            @include breakpoint(xl, min) {
+                margin-left: 5rem;
+                margin-right: 5rem;
+            }
+        }
+        @include breakpoint(md, min) {
+            grid-template-rows: 1fr;
+            grid-template-columns: 1fr 1fr 1fr;
+        }
+    }
+}
+
+.margin-h {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    @include breakpoint(sm, min) {
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+    @include breakpoint(md, min) {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+    @include breakpoint(xl, min) {
+        margin-left: 20%;
+        margin-right: 20%;
+    }
+}
+
+.margin-h-m {
+    margin-left: 1rem;
+    margin-right: 1rem;
+    @include breakpoint(sm, min) {
+        margin-left: 3rem;
+        margin-right: 3rem;
+    }
+}
