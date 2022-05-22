@@ -7,14 +7,14 @@ $navbarh: 2.5rem;
 
 .nav {
     z-index: 100;
-    height: $navbarh;
-    background-color: transparent;
     position: fixed;
     width: 100%;
-    
+    color: $text-alt;
     .nav-container {
+        height: $navbarh;
         display: flex;
         align-items: center;
+        padding: 0.25rem 0;
         .nav-left {
             margin-right: auto;
         }
@@ -24,6 +24,11 @@ $navbarh: 2.5rem;
             gap: 1rem;
         }
     }
+}
+
+.scroll {
+    background-color: $bg;
+    color: $text;
 }
 
 
@@ -64,14 +69,18 @@ $navbarh: 2.5rem;
     font-size: 16px;
     border: none;
     border-radius: 7px;
-    background-color: $primary;
-    color: $text-alt;
+    color: $primary;
+    outline: 2px solid $primary;
     font-weight: 700;
     &:hover {
         cursor: pointer;
+        background-color: $primary;
+        box-shadow: 2px 2px 6px $shadow;
+        color: $text-alt;
+    }
+    &:active {
         background-color: $primary-light;
-        box-shadow: 3px 3px $shadow;
-        outline: 1px solid $bg;
+        box-shadow: none;
     }
     @include breakpoint(sm, min) {
         font-size: 18px;
@@ -83,11 +92,27 @@ $navbarh: 2.5rem;
         position: absolute;
         top: 0;
         left: 0;
-        width: 100%;
+        width: 200%;
         z-index: -1;
-        display: none;
         @include breakpoint(sm, min) {
             display: block;
+            width: 150%;
+        }
+        @include breakpoint(md, min) {
+            width: 125%;
+        }
+        @include breakpoint(lg, min) {
+            width: 100%;
+        }
+        @include breakpoint(xl, min) {
+            width: 80%;
+            left: 10%;
+            right: 10%;
+        }
+        @include breakpoint(xxl, min) {
+            width: 70%;
+            left: 15%;
+            right: 15%;
         }
     }
     min-height: 90vh;
@@ -101,16 +126,14 @@ $navbarh: 2.5rem;
                 margin-right: auto;
                 font-size: 36px;
                 color: $text-alt;
-                text-shadow: 3px 3px $primary;
+                padding-top: 1rem;
+                text-shadow: 3px 3px $text;
                 @include breakpoint(sm, min) {
                     font-size: 48px;
                 }
                 @include breakpoint(lg, min) {
                     font-size: 62px;
                 }
-            }
-            @include breakpoint(sm, min) {
-                padding-top: 1rem;
             }
             @include breakpoint(md, min) {
                 padding-top: 3rem;
@@ -120,7 +143,7 @@ $navbarh: 2.5rem;
             .svg-orator {
                 position: absolute;
                 right: 0;
-                bottom: 0rem;
+                bottom: 1rem;
                 height: 66vh;
             }
             
@@ -180,7 +203,7 @@ $navbarh: 2.5rem;
             box-shadow: 2px 2px 6px $shadow;
         }
         &:hover .img-cover {
-            background-color: $shadow;
+            background-color: $shadow-t;
         }
         &:hover .img-desc {
             display: flex;
@@ -188,7 +211,8 @@ $navbarh: 2.5rem;
     }
     .project-title {
         color: $text-alt;
-        margin: 0.5rem 0.25rem;
+        text-shadow: 2px 2px $primary-light;
+        margin: 0 0.25rem 0.5rem 0.25rem;
     }
     
 }
@@ -249,4 +273,53 @@ $navbarh: 2.5rem;
         padding-top: 1rem;
         padding-bottom: 1rem;
     }
+}
+
+.about-section {
+    background-color: $bg-dark;
+    .about-content {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        .title {
+            display: flex;
+            flex-direction: column;
+            gap: 0.5rem;
+            .my-name {
+                color: $bg;
+                text-shadow: 2px 2px $primary;
+            }
+        }
+        .body {
+            display: flex;
+            gap: 2rem;
+            img {
+                display: none;
+                flex: 1;
+                width: 100%;
+                outline: 3px solid $bg;
+                border-radius: 7px;
+                @include breakpoint(sm, min) {
+                    display: inline;
+                }
+                &:hover {
+                    box-shadow: 2px 2px 6px $shadow;
+                }
+            }
+            p {
+                background-color: $bg;
+                border-radius: 7px;
+                padding: 0.25rem;
+                margin: 0;
+                flex: 2;
+            }
+        }
+    }
+    
+}
+
+.skills-section {
+    min-height: 40rem;
 }
