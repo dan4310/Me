@@ -38,6 +38,7 @@ $navbarh: 2.5rem;
 .logo {
     font-weight: 800;
     font-size: 20px;
+    text-decoration: none;
     @include breakpoint(sm, min) {
         font-size: 24px;
     }
@@ -272,6 +273,25 @@ $navbarh: 2.5rem;
         background-color: $primary-dark;
         padding-top: 1rem;
         padding-bottom: 1rem;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        @include breakpoint(sm, min) {
+            flex-direction: row;
+        }
+        
+        .footer-left {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            @include breakpoint(sm, min) {
+                margin-right: auto;
+            }
+        }
+        .footer-right {
+            display: flex;
+            align-items: center;
+        }
     }
 }
 
@@ -322,4 +342,85 @@ $navbarh: 2.5rem;
 
 .skills-section {
     min-height: 40rem;
+}
+
+.contact-section {
+    
+    background-color: $bg-dark;
+    .contact-content {
+        padding-top: 3rem;
+        padding-bottom: 3rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 2rem;
+        @include breakpoint(md, min) {
+            flex-direction: row;
+        }
+        .icons {
+            display: flex;
+            flex-direction: column;
+            @include breakpoint(md, min) {
+                display: grid;
+                grid-template-columns: 1fr 1fr;
+                grid-template-rows: 1fr 1fr;
+            }
+            gap: 1rem;
+            width: 100%;
+            .icon-item {
+                display: flex;
+                gap: 1rem;
+                padding: 1rem;
+                align-items: center;
+                justify-content: center;
+                text-decoration: none;
+                border: 2px solid transparent;
+                border-radius: 7px;
+                transition: border ease-in-out 0.1s;
+                &:hover {
+                    cursor: pointer;
+                    border: 2px solid $bg;
+                    border-radius: 7px;
+                    box-shadow: 2px 2px 6px $shadow;
+                }
+            }
+            i {
+                font-size: 36px;
+                color: $bg;
+                text-shadow: 1px 1px $shadow;
+            }
+            p {
+                color: $text;
+            }
+        }
+    }
+    
+}
+
+.hamburger {
+    .sidemenu {
+        position: absolute;
+        top: $navbarh + 0.5rem;
+        left: 40%;
+        width: 60%;
+        height: 90vh ;
+        background-color: $bg;
+        color: $text;
+    }
+    i {
+        &:hover {
+            cursor: pointer;
+        }
+    }
+    @include breakpoint(sm, min) {
+        display: none;
+    }
+    
+}
+
+.nav-active {
+    display: inline;
+}
+.nav-inactive {
+    display: none;
 }
