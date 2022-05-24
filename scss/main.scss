@@ -5,11 +5,17 @@
 @import 'colors';
 $navbarh: 2.5rem;
 
+body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
 .nav {
     z-index: 100;
     position: fixed;
     width: 100%;
     color: $text-alt;
+    transition: background-color ease-in-out 0.2s;
     .nav-container {
         height: $navbarh;
         display: flex;
@@ -53,12 +59,16 @@ $navbarh: 2.5rem;
     font-size: 14px;
     font-weight: 400;
     color: inherit;
+    display: none;
     @include breakpoint(sm, min) {
         font-size: 18px;
     }
     &:hover {
         cursor: pointer;
         border-bottom: 2px solid $primary-light;
+    }
+    @include breakpoint(sm, min) {
+        display: inline;
     }
 }
 
@@ -73,6 +83,7 @@ $navbarh: 2.5rem;
     color: $primary;
     outline: 2px solid $primary;
     font-weight: 700;
+    transition: all ease-in-out 0.1s;
     &:hover {
         cursor: pointer;
         background-color: $primary;
@@ -104,22 +115,19 @@ $navbarh: 2.5rem;
         }
         @include breakpoint(lg, min) {
             width: 100%;
+            top: -1rem;
         }
         @include breakpoint(xl, min) {
-            width: 80%;
-            left: 10%;
-            right: 10%;
+            top: -4rem;
+
         }
         @include breakpoint(xxl, min) {
-            width: 70%;
-            left: 15%;
-            right: 15%;
+            top: -8rem;
         }
     }
-    min-height: 90vh;
     .hero-content {
-        position: relative;
-        height: 90vh;
+        display: flex;
+        flex-direction: column;
         .title {
             .title-text {
                 margin-top: 0;
@@ -141,12 +149,17 @@ $navbarh: 2.5rem;
             }
         }
         .hero-background {
+            margin-left: auto;
             .svg-orator {
-                position: absolute;
-                right: 0;
-                bottom: 1rem;
-                height: 66vh;
+                height: 20rem;
+                @include breakpoint(sm, min) {
+                    height: 25rem;
+                }
+                @include breakpoint(md, min) {
+                    height: 30rem;
+                }
             }
+            
             
         }
     }
@@ -157,15 +170,23 @@ $navbarh: 2.5rem;
     background-color: $primary;
     padding-top: 4rem;
     padding-bottom: 4rem;
-    .project-grid {
-        display: grid;
-        gap: 3rem;
-        grid-template-rows: 1fr 1fr 1fr;
-        @include breakpoint(md, min) {
-            grid-template-rows: 1fr;
-            grid-template-columns: 1fr 1fr 1fr;
+    .featured-content {
+        display: flex;
+        flex-direction: column;
+        gap: 2rem;
+        .featured-header {
+            color: $primary-dark;
         }
-        
+        .project-grid {
+            display: grid;
+            gap: 3rem;
+            grid-template-rows: 1fr 1fr 1fr;
+            @include breakpoint(md, min) {
+                grid-template-rows: 1fr;
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+            
+        }
     }
 }
 
@@ -212,7 +233,7 @@ $navbarh: 2.5rem;
     }
     .project-title {
         color: $text-alt;
-        text-shadow: 2px 2px $primary-light;
+        text-shadow: 2px 2px $text;
         margin: 0 0.25rem 0.5rem 0.25rem;
     }
     
@@ -319,13 +340,10 @@ $navbarh: 2.5rem;
                 display: none;
                 flex: 1;
                 width: 100%;
-                outline: 3px solid $bg;
+                border: 3px solid $bg;
                 border-radius: 7px;
                 @include breakpoint(sm, min) {
                     display: inline;
-                }
-                &:hover {
-                    box-shadow: 2px 2px 6px $shadow;
                 }
             }
             p {
@@ -376,41 +394,69 @@ $navbarh: 2.5rem;
                 text-decoration: none;
                 border: 2px solid transparent;
                 border-radius: 7px;
-                transition: border ease-in-out 0.1s;
+                transition: all ease-in-out 0.15s;
                 &:hover {
                     cursor: pointer;
                     border: 2px solid $bg;
                     border-radius: 7px;
                     box-shadow: 2px 2px 6px $shadow;
                 }
+                &:hover i, &:hover p {
+                    text-shadow: 1px 1px $shadow;
+
+                }
             }
             i {
                 font-size: 36px;
                 color: $bg;
-                text-shadow: 1px 1px $shadow;
+                transition: text-shadow ease-in-out 0.2s;
             }
             p {
-                color: $text;
+                color: $bg;
+                font-weight: 500;
+                transition: text-shadow ease-in-out 0.2s;
             }
         }
     }
     
 }
 
+.nav-link-menu {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    color: $text;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+    text-align: center;
+    width: 100%;
+    border-radius: 7px;
+    border: 2px solid transparent;
+    &:hover {
+        border: 2px solid $primary;
+        color: $primary;
+    }
+}
+
 .hamburger {
     .sidemenu {
         position: absolute;
         top: $navbarh + 0.5rem;
-        left: 40%;
         width: 60%;
         height: 90vh ;
         background-color: $bg;
         color: $text;
+        transition: right ease-in-out 0.2s;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0.5rem;
     }
     i {
         &:hover {
             cursor: pointer;
         }
+        font-size: 20px;
     }
     @include breakpoint(sm, min) {
         display: none;
@@ -419,8 +465,8 @@ $navbarh: 2.5rem;
 }
 
 .nav-active {
-    display: inline;
+    right: 0;
 }
 .nav-inactive {
-    display: none;
+    right: -100%;
 }
