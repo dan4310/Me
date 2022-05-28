@@ -4,15 +4,15 @@
 	<link rel="stylesheet" href="css/main.css" >
 	<script src="js/scripts.js"></script>
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
-<script src="https://kit.fontawesome.com/afb200c0a4.js" crossorigin="anonymous"></script>
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
+	<script src="https://kit.fontawesome.com/afb200c0a4.js" crossorigin="anonymous"></script>
 </head>
 <body>
-	<nav class="nav" id="navbar">
+	<nav class="nav-nobg" id="navbar">
 		<div class="nav-container margin-h">
 			<div class="nav-left">
-				<a class="logo" href="#" id="logo">DMC</a>
+				<a class="logo" href="index.html" id="logo">DMC</a>
 			</div>
 			<div class="nav-right">
 				<a class="nav-link" href="#about_section">About</a>
@@ -45,35 +45,41 @@
 		</div>
 		<div class="featured-section" id="featured_section">
 			<div class="margin-h-m featured-content">
-				<h1 class="featured-header">My Spotlight</h1>
+				<!-- <h1 class="featured-header">My Spotlight</h1> -->
 				<div class="project-grid">
 					<div class="project-container">
 						<h2 class="project-title">Film Critic</h2>
-						<div class="project">
-							<div class="img-cover">
-								<p class="img-desc">Description</p>
+						<a href="projects/index.html">
+							<div class="project">
+								<div class="img-cover">
+									<p class="img-desc">Description</p>
+								</div>
+								<img class="project-img" src="images/filmCriticHome.png" />
 							</div>
-							<img class="project-img" src="images/filmCriticHome.png" />
-						</div>
+						</a>
 					</div>
 					<div class="project-container">
 						<h2 class="project-title">Sorting Aglos</h2>
-						<div class="project">
-							<div class="img-cover">
-								<p class="img-desc">Description</p>
+						<a href="projects/index.html">
+							<div class="project">
+								<div class="img-cover">
+									<p class="img-desc">Description</p>
+								</div>
+								<img class="project-img" src="images/sorter.png" />
 							</div>
-							<img class="project-img" src="images/sorter.png" />
-						</div>
+						</a>
 					</div>
-					<!-- <div class="project-container">
-						<h2 class="project-title">MLB Data</h2>
-						<div class="project">
-							<div class="img-cover">
-								<p class="img-desc">Description</p>
+					<div class="project-container">
+						<h2 class="project-title">Tony's Tacos</h2>
+						<a href="projects/index.html">
+							<div class="project">
+								<div class="img-cover">
+									<p class="img-desc">Description</p>
+								</div>
+								<img class="project-img"src="images/tonys.png" />
 							</div>
-							<img class="project-img" src="images/mlbdatabase.png" />
-						</div>
-					</div> -->
+						</a>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -85,7 +91,9 @@
 				</div>
 				<div class="body">
 					<img src="images/me.jpg" />
-					<p>Some stuff about me.</p>
+					<p class="about-me-text"><strong>Passionate programmer</strong> and <strong>problem solver</strong> who enjoys learning new technologies through
+<strong>challenging creative projects</strong>. Motivated to advance my skillset and career to provide beneficial
+<strong>software</strong> to my community.</p>
 				</div>
 			</div>
 		</div>
