@@ -10,6 +10,39 @@ body {
     overflow-x: hidden;
 }
 
+.dropdown {
+    position: relative;
+    .dropdown-menu {
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        margin-top: 0.25rem;
+        position: absolute;
+        visibility: collapse;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 0.5rem;
+        transition: all ease-in-out 0.1s;
+        // transition: visibility ease-in-out 0.2s;
+        width: 150%;
+        background-color: $bg;
+        padding: 0.5rem;
+        border-radius: 4px;
+        color: $text;
+        list-style-type: none;
+    }
+    &:hover .dropdown-menu {
+        visibility: visible;
+        box-shadow: 1px 1px 3px $shadow;
+    }
+    .dropdown-menu:hover {
+        visibility: visible;
+        box-shadow: 1px 1px 3px $shadow;
+    }
+}
+
 .nav {
     z-index: 100;
     position: fixed;

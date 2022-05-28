@@ -26,6 +26,52 @@ body {
   overflow-x: hidden;
 }
 
+.dropdown {
+  position: relative;
+}
+
+.dropdown .dropdown-menu {
+  margin-top: 0.25rem;
+  position: absolute;
+  visibility: collapse;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  gap: 0.5rem;
+  -webkit-transition: all ease-in-out 0.1s;
+  transition: all ease-in-out 0.1s;
+  width: 150%;
+  background-color: white;
+  padding: 0.5rem;
+  border-radius: 4px;
+  color: black;
+  list-style-type: none;
+}
+
+.dropdown .dropdown-menu a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.dropdown:hover .dropdown-menu {
+  visibility: visible;
+  -webkit-box-shadow: 1px 1px 3px black;
+          box-shadow: 1px 1px 3px black;
+}
+
+.dropdown .dropdown-menu:hover {
+  visibility: visible;
+  -webkit-box-shadow: 1px 1px 3px black;
+          box-shadow: 1px 1px 3px black;
+}
+
 .nav, .nav-nobg {
   z-index: 100;
   position: fixed;

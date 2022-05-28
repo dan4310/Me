@@ -35,13 +35,14 @@ window.onload = function () {
     btnnav.onclick = hamburgerOnClick
 
     var btnemail = document.getElementById('btn-email')
-    btnemail.onclick = function() {
-        var email = 'dan4310@gmail.com'
-        var subject = 'Some subject'.replace(' ', '%20')
-        var body = 'message goes here'.replace(' ', '%20')
+    if (btnemail)
+        btnemail.onclick = function() {
+            var email = 'dan4310@gmail.com'
+            var subject = 'Some subject'.replace(' ', '%20')
+            var body = 'message goes here'.replace(' ', '%20')
 
-        window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
-    }
+            window.location.href = `mailto:${email}?subject=${subject}&body=${body}`;
+        }
     var menuLinks = document.getElementsByClassName('nav-link-menu');
     for (let i = 0; i < menuLinks.length; i++)
         menuLinks.item(i).onclick = hamburgerOnClick

@@ -1,0 +1,20 @@
+[
+    {
+        "id": 1,
+        "title": "FilmCritic",
+        "description": "Social media for movie reviews.",
+        "fileName": "filmcritic"
+    },
+    {
+        "id": 2,
+        "title": "Sorting Aglorithms",
+        "description": "A satisfying visual display of some sorting algorithms.",
+        "fileName": "sortingalgos"
+    },
+    {
+        "id": 3,
+        "title": "Tony's Tacos",
+        "description": "A resteraunt ordering app for my favorite local resteraunt.",
+        "fileName": "tonystacos"
+    }
+]
