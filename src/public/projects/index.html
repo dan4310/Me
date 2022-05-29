@@ -2,7 +2,10 @@
 <html>
 <head>
 	<link rel="stylesheet" href="../css/main.css" >
-	<script src="../js/scripts.js"></script>
+	<script type="text/javascript" src="../js/navbar.js"></script>
+	<script type="text/javascript" src="../js/main.js"></script>
+	<script type="text/javascript" src="../js/projectList.js"></script>
+
 	<link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet"> 
@@ -37,22 +40,12 @@
 		</div>
 	</nav>
     <div class="content">
-        <div class="header margin-h">
+        <div class="page-header margin-h">
             <h1>Projects List</h1>
+			<p>Daniel Courtney's software projects</p>
         </div>
-        <div class="project-list margin-h">
-            <div class="project-item">
-                <h2>FilmCritic</h2>
-                <p>Some stuff</p>
-            </div>
-            <div class="project-item">
-                <h2>Sorting Algos</h2>
-                <p>Some stuff</p>
-            </div>
-            <div class="project-item">
-                <h2>Tonys Tacos</h2>
-                <p>Some stuff</p>
-            </div>
+        <div id="project-list" class="project-list margin-h">
+			<!-- filled by js -->
         </div>
     </div>
 </body>

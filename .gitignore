@@ -1,2 +1,2 @@
-src/projects/*
+src/projects/
 !src/projects/index.html

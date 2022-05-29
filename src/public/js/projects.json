@@ -16,5 +16,11 @@
         "title": "Tony's Tacos",
         "description": "A resteraunt ordering app for my favorite local resteraunt.",
         "fileName": "tonystacos"
+    },
+    {
+        "id": 4,
+        "title": "Stock Trading Bot",
+        "description": "A python script using Alpaca Tradings API.",
+        "fileName": "tradingbot"
     }
 ]
